@@ -3,7 +3,7 @@ const { connection } = require('./config/db')
 const { invoiceRouter } = require('./routes/InvoiceRoutes')
 const app = express()
 require('dotenv').config()
-
+app.use(express.json())
 
 
 app.use('/invoice', invoiceRouter)

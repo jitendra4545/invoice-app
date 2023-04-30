@@ -2,11 +2,14 @@ const mongoose = require(`mongoose`)
 
 
 const SupplierSchema = mongoose.Schema({
-    PartyName: { require: true, String },
-    PhoneNo: { require: true, Number },
-    Address: { require: true, String },
-    GSTIN: { require: false, String }
+    PartyName: { require: true, type:String },
+    PhoneNo: { require: true,type: Number },
+    Address: { require: true, type:String },
+    GSTIN: { require: false, type:String }
+},{
+    versionKey:false
 })
+
 
 
 
