@@ -70,6 +70,7 @@ invoiceRouter.delete("/supplier/delete/:id", async (req, res) => {
 
 invoiceRouter.post("/items/add",async(req,res)=>{
     let data=req.body
+    console.log(data)
     try{
         let newData=new ItemModel(data)
         await newData.save()
@@ -83,15 +84,3 @@ module.exports = {
     invoiceRouter
 }
 
-//{
-//  "ItemName":"abcd",
-//  "SellingPrice":45,
-//  "PurchasePrice":62,
-//  "Units":"20",
-//  "OpeningStock":5,
-//  "LowStock":10,
-//  "HSNCode":"abcd1234",
-//  "GST":"24%",
-//  "Description":"abcdefg"
-
-// }
