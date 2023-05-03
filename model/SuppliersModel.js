@@ -6,9 +6,10 @@ const SupplierSchema = mongoose.Schema({
     PhoneNo: { required: true,type: Number },
     Address: { required: true, type:String },
     GSTIN: { required: false, type:String }
-},{
-    versionKey:false
-})
+    
+},
+{ timestamps: true }
+)
 
 
 

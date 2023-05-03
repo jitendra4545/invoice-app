@@ -41,7 +41,30 @@ invoiceRouter.delete("/customer/delete/:id", async (req, res) => {
     }
 })
 
+
+invoiceRouter.get("/customer",async(req,res)=>{
+    
+    try{
+     let data=await CustomerModel.find()
+     res.send(data)
+    }catch(err){
+res.send(err)
+    }
+})
+
+
 // here we can add new supplier........
+
+invoiceRouter.get("/supplier",async(req,res)=>{
+    
+    try{
+     let data=await SupplierModel.find()
+     res.send(data)
+    }catch(err){
+res.send(err)
+    }
+})
+
 
 invoiceRouter.post("/supplier/add", async (req, res) => {
     let data = req.body
@@ -67,6 +90,16 @@ invoiceRouter.delete("/supplier/delete/:id", async (req, res) => {
 })
 
 // here we can add new item........
+
+invoiceRouter.get("/item",async(req,res)=>{
+    try{
+        let data=await ItemModel.find()
+        res.send(data)
+       }catch(err){
+   res.send(err)
+       }  
+})
+
 
 invoiceRouter.post("/items/add",async(req,res)=>{
     let data=req.body
